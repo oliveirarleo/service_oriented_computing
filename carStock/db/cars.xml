@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<carsdb>
+	<car id="1">
+		<model>mook kim</model>
+		<city>mkyong</city>
+		<fabday>100000</fabday>
+		<reservation>
+			<day>123</day>
+			<day>222</day>
+			<day>333</day>
+		</reservation>
+	</car>
+</carsdb>
