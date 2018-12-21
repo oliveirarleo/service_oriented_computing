@@ -1,13 +1,242 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<carsdb>
-	<car id="1">
-		<model>mook kim</model>
-		<city>mkyong</city>
-		<fabday>100000</fabday>
-		<reservation>
-			<day>123</day>
-			<day>222</day>
-			<day>333</day>
-		</reservation>
-	</car>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><carsdb>
+  <car id="70198369-253d-49a4-81c5-198ed89f0371">
+    <model>Corsa</model>
+    <city>Paris</city>
+    <fabday>09/06/2013</fabday>
+    <reservation>
+      <interval>19/06/2013:29/06/2013</interval>
+      <interval>19/07/2013:29/07/2013</interval>
+      <interval>19/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="b5690836-5145-4532-baa6-8fe6abda636c">
+    <model>Corsa</model>
+    <city>Paris</city>
+    <fabday>09/06/2013</fabday>
+    <reservation>
+      <interval>19/06/2013:29/06/2013</interval>
+      <interval>19/07/2013:29/07/2013</interval>
+      <interval>19/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="d7210375-55f6-4fed-8ea4-88e8c841f0ef">
+    <model>Corsa</model>
+    <city>Paris</city>
+    <fabday>09/06/2013</fabday>
+    <reservation>
+      <interval>19/06/2013:29/06/2013</interval>
+      <interval>19/07/2013:29/07/2013</interval>
+      <interval>19/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="f3de6e86-e142-4544-883c-458e46dfe0bd">
+    <model>Corsa</model>
+    <city>Paris</city>
+    <fabday>09/06/2013</fabday>
+    <reservation>
+      <interval>19/06/2013:29/06/2013</interval>
+      <interval>19/07/2013:29/07/2013</interval>
+      <interval>19/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="93e07a21-7c75-442c-82e7-6de62a1f6277">
+    <model>Corsa</model>
+    <city>Paris</city>
+    <fabday>09/06/2013</fabday>
+    <reservation>
+      <interval>19/06/2013:29/06/2013</interval>
+      <interval>19/07/2013:29/07/2013</interval>
+      <interval>19/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="b2cd1545-a621-49dd-bf58-5e9f7e28d4c3">
+    <model>Corsa</model>
+    <city>Paris</city>
+    <fabday>09/06/2013</fabday>
+    <reservation>
+      <interval>19/06/2013:29/06/2013</interval>
+      <interval>19/07/2013:29/07/2013</interval>
+      <interval>19/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="0be7b3c0-07e5-4240-9d62-b502fa520ee9">
+    <model>Corsa</model>
+    <city>Paris</city>
+    <fabday>09/06/2013</fabday>
+    <reservation>
+      <interval>19/06/2013:29/06/2013</interval>
+      <interval>19/07/2013:29/07/2013</interval>
+      <interval>19/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="5fe0b53f-30ce-473f-9d7c-150b6a6d21ad">
+    <model>Corsa</model>
+    <city>Paris</city>
+    <fabday>09/06/2013</fabday>
+    <reservation>
+      <interval>19/06/2013:29/06/2013</interval>
+      <interval>19/07/2013:29/07/2013</interval>
+      <interval>19/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="a630352e-629b-424d-918d-4afd6e15e31d">
+    <model>Corsa</model>
+    <city>Paris</city>
+    <fabday>09/06/2013</fabday>
+    <reservation>
+      <interval>19/06/2013:29/06/2013</interval>
+      <interval>19/07/2013:29/07/2013</interval>
+      <interval>19/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="d432f2d3-079a-4939-98e3-8f55741569b8">
+    <model>Corsa</model>
+    <city>Paris</city>
+    <fabday>09/06/2013</fabday>
+    <reservation>
+      <interval>19/06/2013:29/06/2013</interval>
+      <interval>19/07/2013:29/07/2013</interval>
+      <interval>19/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="1ac984a2-fb1b-45bd-87b5-1da48646bf47">
+    <model>Palio</model>
+    <city>London</city>
+    <fabday>09/07/2016</fabday>
+    <reservation>
+      <interval>01/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="8ddc8553-3b80-469d-ae80-5058c1f468ea">
+    <model>Palio</model>
+    <city>London</city>
+    <fabday>09/07/2016</fabday>
+    <reservation>
+      <interval>01/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="1ddfe9e7-dc25-4cc4-848e-b06983b5884e">
+    <model>Palio</model>
+    <city>London</city>
+    <fabday>09/07/2016</fabday>
+    <reservation>
+      <interval>01/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="9cc5d9d5-591b-4c5c-8c0c-94b0248e2ba3">
+    <model>Palio</model>
+    <city>London</city>
+    <fabday>09/07/2016</fabday>
+    <reservation>
+      <interval>01/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="a776ce34-217c-43ce-88bd-a9b26ea5b4ec">
+    <model>Palio</model>
+    <city>London</city>
+    <fabday>09/07/2016</fabday>
+    <reservation>
+      <interval>01/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="bac606e5-e95f-44e0-bd97-0e7abb0d1e74">
+    <model>Palio</model>
+    <city>London</city>
+    <fabday>09/07/2016</fabday>
+    <reservation>
+      <interval>01/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="0b2a8a8f-b03f-45af-8b58-ba7ac1dcfe81">
+    <model>Palio</model>
+    <city>London</city>
+    <fabday>09/07/2016</fabday>
+    <reservation>
+      <interval>01/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="0eb808e6-9372-4b8c-b20d-de59165f7888">
+    <model>Palio</model>
+    <city>London</city>
+    <fabday>09/07/2016</fabday>
+    <reservation>
+      <interval>01/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="4f9a8a47-28fc-434a-98c2-f458e49cc451">
+    <model>Palio</model>
+    <city>London</city>
+    <fabday>09/07/2016</fabday>
+    <reservation>
+      <interval>01/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="5cc1577a-1c31-4c9e-b208-d59acb4d2cad">
+    <model>Palio</model>
+    <city>London</city>
+    <fabday>09/07/2016</fabday>
+    <reservation>
+      <interval>01/07/2016:29/07/2016</interval>
+    </reservation>
+  </car>
+  <car id="9c05ff36-4329-4e83-803f-c8a22b122410">
+    <model>Civic</model>
+    <city>London</city>
+    <fabday>09/12/2016</fabday>
+    <reservation/>
+  </car>
+  <car id="d0993d2f-3755-44e2-a5f1-a7295076851d">
+    <model>Civic</model>
+    <city>London</city>
+    <fabday>09/12/2016</fabday>
+    <reservation/>
+  </car>
+  <car id="fc97736f-2d24-4126-8f95-2178edcddd66">
+    <model>Civic</model>
+    <city>London</city>
+    <fabday>09/12/2016</fabday>
+    <reservation/>
+  </car>
+  <car id="aac06b10-ab52-415b-a8d8-6c0ef40f4a82">
+    <model>Civic</model>
+    <city>London</city>
+    <fabday>09/12/2016</fabday>
+    <reservation/>
+  </car>
+  <car id="e3b8a021-50ef-4f04-adf1-b773b857c7ca">
+    <model>Civic</model>
+    <city>London</city>
+    <fabday>09/12/2016</fabday>
+    <reservation/>
+  </car>
+  <car id="7675484a-083f-4519-a104-834d8375cc05">
+    <model>Civic</model>
+    <city>London</city>
+    <fabday>09/12/2016</fabday>
+    <reservation/>
+  </car>
+  <car id="a4f10b93-7aa9-48bd-8b5a-e9f70fc82040">
+    <model>Civic</model>
+    <city>London</city>
+    <fabday>09/12/2016</fabday>
+    <reservation/>
+  </car>
+  <car id="91cf1435-76d0-458f-99f7-bcff7b05d328">
+    <model>Civic</model>
+    <city>London</city>
+    <fabday>09/12/2016</fabday>
+    <reservation/>
+  </car>
+  <car id="6af0defe-aa23-48be-b63a-446a2ceecdaa">
+    <model>Civic</model>
+    <city>London</city>
+    <fabday>09/12/2016</fabday>
+    <reservation/>
+  </car>
+  <car id="1ab63825-0931-4fc1-86b4-9e1b01fd96fb">
+    <model>Civic</model>
+    <city>London</city>
+    <fabday>09/12/2016</fabday>
+    <reservation><interval>01/07/2019:29/07/2019</interval></reservation>
+  </car>
 </carsdb>

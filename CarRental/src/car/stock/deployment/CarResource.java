@@ -17,22 +17,45 @@ import car.stock.deployment.CarStockStub.UpdateCarAvailabilityResponse;
 public class CarResource extends ServerResource {  	
 	@Get  
 	public String toString() {
-		String uid = (String) getRequestAttributes().get("uid");
-		
+		String param = (String) getRequestAttributes().get("param");
+		String instance = (String) getRequestAttributes().get("instance");
+		String id = (String) getRequestAttributes().get("uid");
+//		System.out.println(id);
 		String response = null;
-		if(uid == null || uid.equals("null")) {
+		if(id != null && !id.equals("")) {
 			try {
 				CarStockStub carStockStub = new CarStockStub();
 				CheckAvailableCars checkCars = new CheckAvailableCars();
+				checkCars.setSearch("//car[@id='"+id+"']");
 				CheckAvailableCarsResponse checkCarsResponse = carStockStub.checkAvailableCars(checkCars);
 				response = checkCarsResponse.get_return();
-//				for(int i = 0; i < response.length; i++) {
-//					System.out.println(response[i]);
-//				}
 				
 			} catch(Exception e ) {
 				e.printStackTrace();
 			}
+		} else if((instance != null && !instance.equals("")) && (param != null && !param.equals(""))) {
+			try {
+				CarStockStub carStockStub = new CarStockStub();
+				CheckAvailableCars checkCars = new CheckAvailableCars();
+				checkCars.setSearch("//car["+ param +"='"+instance+"']");
+				CheckAvailableCarsResponse checkCarsResponse = carStockStub.checkAvailableCars(checkCars);
+				response = checkCarsResponse.get_return();
+				
+			} catch(Exception e ) {
+				e.printStackTrace();
+			}
+		} else {
+			try {
+				CarStockStub carStockStub = new CarStockStub();
+				CheckAvailableCars checkCars = new CheckAvailableCars();
+				checkCars.setSearch("//car");
+				CheckAvailableCarsResponse checkCarsResponse = carStockStub.checkAvailableCars(checkCars);
+				response = checkCarsResponse.get_return();
+				
+			} catch(Exception e ) {
+				e.printStackTrace();
+			}
+			
 		}
 		return response;
 	}
@@ -47,7 +70,8 @@ public class CarResource extends ServerResource {
 		try {
 			CarStockStub carStockStub = new CarStockStub();
 			UpdateCarAvailability updateCars = new UpdateCarAvailability();
-			updateCars.setIds(uid);
+			updateCars.setSearch("//car[model='Palio']");
+			updateCars.setDates("01/07/2020:29/07/2020");
 			UpdateCarAvailabilityResponse updateCarsResponse = carStockStub.updateCarAvailability(updateCars);
 			response = updateCarsResponse.get_return();
 //				for(int i = 0; i < response.length; i++) {

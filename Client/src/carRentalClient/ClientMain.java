@@ -14,12 +14,12 @@ public class ClientMain {
 		ClientResource resource = new ClientResource("http://localhost:8182/cars");
 		 
 		Form form = new Form();  
-		form.add("uid", "1");
+		form.add("model", "Corsa");
 		
 		// Write the response entity on the console
 		try {
-//			resource.get().write(System.out);
-			resource.post(form).write(System.out);
+			resource.get().write(System.out);
+//			resource.post(form).write(System.out);
 		} catch (ResourceException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

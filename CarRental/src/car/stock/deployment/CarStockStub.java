@@ -1217,6 +1217,48 @@
 
             
 
+                        /**
+                        * field for Search
+                        */
+
+                        
+                                    protected java.lang.String localSearch ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSearchTracker = false ;
+
+                           public boolean isSearchSpecified(){
+                               return localSearchTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSearch(){
+                               return localSearch;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Search
+                               */
+                               public void setSearch(java.lang.String param){
+                            localSearchTracker = true;
+                                   
+                                            this.localSearch=param;
+                                    
+
+                               }
+                            
+
      
      
         /**
@@ -1275,7 +1317,25 @@
 
                
                    }
-               
+                if (localSearchTracker){
+                                    namespace = "http://deployment.stock.car";
+                                    writeStartElement(null, namespace, "search", xmlWriter);
+                             
+
+                                          if (localSearch==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSearch);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
                     xmlWriter.writeEndElement();
                
 
@@ -1460,7 +1520,13 @@
                  java.util.ArrayList elementList = new java.util.ArrayList();
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
-                
+                 if (localSearchTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://deployment.stock.car",
+                                                                      "search"));
+                                 
+                                         elementList.add(localSearch==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSearch));
+                                    }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -1535,7 +1601,35 @@
                 
                     
                     reader.next();
-                  
+                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://deployment.stock.car","search").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSearch(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                  
                             while (!reader.isStartElement() && !reader.isEndElement())
                                 reader.next();
                             
@@ -2018,20 +2112,20 @@
             
 
                         /**
-                        * field for Ids
+                        * field for Search
                         */
 
                         
-                                    protected java.lang.String localIds ;
+                                    protected java.lang.String localSearch ;
                                 
                            /*  This tracker boolean wil be used to detect whether the user called the set method
                           *   for this attribute. It will be used to determine whether to include this field
                            *   in the serialized XML
                            */
-                           protected boolean localIdsTracker = false ;
+                           protected boolean localSearchTracker = false ;
 
-                           public boolean isIdsSpecified(){
-                               return localIdsTracker;
+                           public boolean isSearchSpecified(){
+                               return localSearchTracker;
                            }
 
                            
@@ -2040,20 +2134,62 @@
                            * Auto generated getter method
                            * @return java.lang.String
                            */
-                           public  java.lang.String getIds(){
-                               return localIds;
+                           public  java.lang.String getSearch(){
+                               return localSearch;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param Ids
+                               * @param param Search
                                */
-                               public void setIds(java.lang.String param){
-                            localIdsTracker = true;
+                               public void setSearch(java.lang.String param){
+                            localSearchTracker = true;
                                    
-                                            this.localIds=param;
+                                            this.localSearch=param;
+                                    
+
+                               }
+                            
+
+                        /**
+                        * field for Dates
+                        */
+
+                        
+                                    protected java.lang.String localDates ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localDatesTracker = false ;
+
+                           public boolean isDatesSpecified(){
+                               return localDatesTracker;
+                           }
+
+                           
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getDates(){
+                               return localDates;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param Dates
+                               */
+                               public void setDates(java.lang.String param){
+                            localDatesTracker = true;
+                                   
+                                            this.localDates=param;
                                     
 
                                }
@@ -2117,12 +2253,12 @@
 
                
                    }
-                if (localIdsTracker){
+                if (localSearchTracker){
                                     namespace = "http://deployment.stock.car";
-                                    writeStartElement(null, namespace, "ids", xmlWriter);
+                                    writeStartElement(null, namespace, "search", xmlWriter);
                              
 
-                                          if (localIds==null){
+                                          if (localSearch==null){
                                               // write the nil attribute
                                               
                                                      writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
@@ -2130,7 +2266,25 @@
                                           }else{
 
                                         
-                                                   xmlWriter.writeCharacters(localIds);
+                                                   xmlWriter.writeCharacters(localSearch);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localDatesTracker){
+                                    namespace = "http://deployment.stock.car";
+                                    writeStartElement(null, namespace, "dates", xmlWriter);
+                             
+
+                                          if (localDates==null){
+                                              // write the nil attribute
+                                              
+                                                     writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","nil","1",xmlWriter);
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localDates);
                                             
                                           }
                                     
@@ -2320,12 +2474,18 @@
                  java.util.ArrayList elementList = new java.util.ArrayList();
                  java.util.ArrayList attribList = new java.util.ArrayList();
 
-                 if (localIdsTracker){
+                 if (localSearchTracker){
                                       elementList.add(new javax.xml.namespace.QName("http://deployment.stock.car",
-                                                                      "ids"));
+                                                                      "search"));
                                  
-                                         elementList.add(localIds==null?null:
-                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIds));
+                                         elementList.add(localSearch==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSearch));
+                                    } if (localDatesTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://deployment.stock.car",
+                                                                      "dates"));
+                                 
+                                         elementList.add(localDates==null?null:
+                                         org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDates));
                                     }
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -2405,7 +2565,7 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://deployment.stock.car","ids").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://deployment.stock.car","search").equals(reader.getName())){
                                 
                                        nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                        if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
@@ -2413,7 +2573,35 @@
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setIds(
+                                              object.setSearch(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                            
+                                       } else {
+                                           
+                                           
+                                           reader.getElementText(); // throw away text nodes if any.
+                                       }
+                                      
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://deployment.stock.car","dates").equals(reader.getName())){
+                                
+                                       nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                       if (!"true".equals(nillableValue) && !"1".equals(nillableValue)){
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setDates(
                                                     org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
                                             
                                        } else {

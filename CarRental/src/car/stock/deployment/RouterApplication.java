@@ -14,8 +14,9 @@ public class RouterApplication extends Application{
 		Router router = new Router(getContext());
 		// Defines only three routes
 		router.attach("/cars", CarResource.class);
-		router.attach("/cars/{uid}", CarResource.class);
-//		router.attach("/cars/{uid}/items", UserItemResource.class);
+		router.attach("/cars/id/{uid}", CarResource.class);
+		router.attach("/cars/{param}/{instance}", CarResource.class);
+//		router.attach("/cars/{uid}", UserItemResource.class);
 		return router;
 	}
 }

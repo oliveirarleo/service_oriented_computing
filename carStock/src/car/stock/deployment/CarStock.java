@@ -7,76 +7,103 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.UUID;
-import data.*;
 
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.input.SAXBuilder;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import data.*;
 
 
 
 public class CarStock {
-	public String checkAvailableCars(){
+	public String checkAvailableCars(String search){
 		String response = new String();
+		
+		String filePath = new String("/Users/leonardo/tsp/files/project/carStock/db/cars.xml");
+		
+		NodeList nodes = null;
+		Document doc = null;
 		try {
-			SAXBuilder builder = new SAXBuilder();
-	        // build a JDOM2 Document using the SAXBuilder.
-	        Document doc = builder.build(new File("/Users/leonardo/tsp/files/project/carStock/db/cars.xml"));
-	        Element rootNode = doc.getRootElement();
-	        
-	        List list = rootNode.getChildren("car");
-	        for (int i = 0; i < list.size(); i++) {
-
-				Element node = (Element) list.get(i);
-				response += node.getAttribute("id")+ ";";
-				response += node.getChildText("model") + ";";
-				response += node.getChildText("city") + ";";
-				response += "Fabr. Day : " + node.getChildText("fabday") + ";";
-				Element reservations = node.getChild("reservation");
-				for (Element day : reservations.getChildren("day")) {
-					response += day.getText() + ",";
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			doc = builder.parse(filePath);
+			XPath xPath = XPathFactory.newInstance().newXPath();
+			
+			nodes = (NodeList)xPath.evaluate(search, doc, XPathConstants.NODESET);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		if(nodes != null && doc != null) {
+			for (int i = 0; i < nodes.getLength(); i++) {
+				if (nodes.item(i).getNodeType() == Node.ELEMENT_NODE) {
+					Element carElement = (Element) nodes.item(i);
+					Car carro = new Car(carElement);
+					response += carro.toString()+"\n";
 				}
-	 		}
-	        
-		} catch (Exception io) {
-			io.printStackTrace();
-		} 
-		
-		
-//		List<Car> availableCars = new ArrayList<Car>();
-//		Calendar fabricationDate = new GregorianCalendar(2001, 5, 3);
-//		List<DateInterval> reservation = new ArrayList<DateInterval>();
-//		reservation.add(new DateInterval(new GregorianCalendar(2001, 5,5), new GregorianCalendar(2001, 5, 10)));
-//		reservation.add(new DateInterval(new GregorianCalendar(2001, 5, 13), new GregorianCalendar(2001, 5, 18)));
-//		reservation.add(new DateInterval(new GregorianCalendar(2001, 5, 20), new GregorianCalendar(2001, 5, 30)));
-//		availableCars.add((new Car("modelo1", "London", fabricationDate, reservation)));
-//		availableCars.add((new Car("modelo2", "Paris", fabricationDate, reservation)));
-//		availableCars.add((new Car("modelo3", "Amsterdam", fabricationDate, reservation)));
-//		availableCars.add((new Car("modelo4", "Berlim", fabricationDate, reservation)));
-//		
-//		for (Car ac : availableCars) {
-//			response = response + "\n" + ac;
-//		}
-		
+				
+			}
+		}
 		return response;
-		
 	}
 	
-	public String updateCarAvailability(String ids){
+	public String updateCarAvailability(String search, String dates){
+		String filePath = new String("/Users/leonardo/tsp/files/project/carStock/db/cars.xml");
 		
-		System.out.println(ids);
+		String[] dateIntervals = dates.split(",");
+		
+		NodeList nodes = null;
+		Document doc = null;
+		try {
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			doc = builder.parse(filePath);
+			XPath xPath = XPathFactory.newInstance().newXPath();
+			
+			nodes = (NodeList)xPath.evaluate(search, doc, XPathConstants.NODESET);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+		if(nodes != null && doc != null) {
+			for (int i = 0; i < nodes.getLength(); i++) {
+				for(int j = 0; j < dateIntervals.length; j++) {
+					if (nodes.item(i).getNodeType() == Node.ELEMENT_NODE) {
+						Element carsElement = (Element) nodes.item(i);
+						Node reservationNode = carsElement.getElementsByTagName("reservation").item(0);
+						if (reservationNode.getNodeType() == Node.ELEMENT_NODE) {
+							Element reservationElement = (Element) reservationNode;
+							Element interval = doc.createElement("interval");
+							interval.appendChild(doc.createTextNode(dateIntervals[j]));
+							reservationElement.appendChild(interval);
+						}
+						
+					}
+				}
+				
+			}
+			
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer;
+			try {
+				transformer = transformerFactory.newTransformer();
+				DOMSource source = new DOMSource(doc);
+				StreamResult result = new StreamResult(new File(filePath));
+				transformer.transform(source, result);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		return "success";
-//		try {
-//			SAXBuilder builder = new SAXBuilder();
-//	        // build a JDOM2 Document using the SAXBuilder.
-//	        Document doc = builder.build(new File("/Users/leonardo/tsp/files/project/carStock/db/cars.xml"));
-//	        Element rootNode = doc.getRootElement();
-//	        
-//	        List list = rootNode.getChildren("car");
-//	        
-//	        
-//		} catch (Exception io) {
-//			io.printStackTrace();
-//		} 
 	}
 }
