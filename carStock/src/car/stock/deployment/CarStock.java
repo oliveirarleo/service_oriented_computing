@@ -104,6 +104,6 @@ public class CarStock {
 				e.printStackTrace();
 			}
 		}
-		return "success";
+		return "success\n";
 	}
 }

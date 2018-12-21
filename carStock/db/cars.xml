@@ -183,60 +183,60 @@
     <model>Civic</model>
     <city>London</city>
     <fabday>09/12/2016</fabday>
-    <reservation/>
+    <reservation><interval>01/09/2016:29/09/2016</interval><interval>01/07/2019:29/07/2019</interval><interval>01/07/2019:29/07/2019</interval><interval>01/07/2020:29/07/2020</interval></reservation>
   </car>
   <car id="d0993d2f-3755-44e2-a5f1-a7295076851d">
     <model>Civic</model>
     <city>London</city>
     <fabday>09/12/2016</fabday>
-    <reservation/>
+    <reservation><interval>01/07/2019:29/07/2019</interval><interval>01/07/2020:29/07/2020</interval></reservation>
   </car>
   <car id="fc97736f-2d24-4126-8f95-2178edcddd66">
     <model>Civic</model>
     <city>London</city>
     <fabday>09/12/2016</fabday>
-    <reservation/>
+    <reservation><interval>01/07/2019:29/07/2019</interval><interval>01/07/2020:29/07/2020</interval></reservation>
   </car>
   <car id="aac06b10-ab52-415b-a8d8-6c0ef40f4a82">
     <model>Civic</model>
     <city>London</city>
     <fabday>09/12/2016</fabday>
-    <reservation/>
+    <reservation><interval>01/07/2019:29/07/2019</interval><interval>01/07/2020:29/07/2020</interval></reservation>
   </car>
   <car id="e3b8a021-50ef-4f04-adf1-b773b857c7ca">
     <model>Civic</model>
     <city>London</city>
     <fabday>09/12/2016</fabday>
-    <reservation/>
+    <reservation><interval>01/07/2019:29/07/2019</interval><interval>01/07/2020:29/07/2020</interval></reservation>
   </car>
   <car id="7675484a-083f-4519-a104-834d8375cc05">
     <model>Civic</model>
     <city>London</city>
     <fabday>09/12/2016</fabday>
-    <reservation/>
+    <reservation><interval>01/07/2019:29/07/2019</interval><interval>01/07/2020:29/07/2020</interval></reservation>
   </car>
   <car id="a4f10b93-7aa9-48bd-8b5a-e9f70fc82040">
     <model>Civic</model>
     <city>London</city>
     <fabday>09/12/2016</fabday>
-    <reservation/>
+    <reservation><interval>01/07/2019:29/07/2019</interval><interval>01/07/2020:29/07/2020</interval></reservation>
   </car>
   <car id="91cf1435-76d0-458f-99f7-bcff7b05d328">
     <model>Civic</model>
     <city>London</city>
     <fabday>09/12/2016</fabday>
-    <reservation/>
+    <reservation><interval>01/07/2019:29/07/2019</interval><interval>01/07/2020:29/07/2020</interval></reservation>
   </car>
   <car id="6af0defe-aa23-48be-b63a-446a2ceecdaa">
     <model>Civic</model>
     <city>London</city>
     <fabday>09/12/2016</fabday>
-    <reservation/>
+    <reservation><interval>01/07/2019:29/07/2019</interval><interval>01/07/2020:29/07/2020</interval></reservation>
   </car>
   <car id="1ab63825-0931-4fc1-86b4-9e1b01fd96fb">
     <model>Civic</model>
     <city>London</city>
     <fabday>09/12/2016</fabday>
-    <reservation><interval>01/07/2019:29/07/2019</interval></reservation>
+    <reservation><interval>01/07/2019:29/07/2019</interval><interval>01/07/2019:29/07/2019</interval><interval>01/07/2020:29/07/2020</interval></reservation>
   </car>
 </carsdb>

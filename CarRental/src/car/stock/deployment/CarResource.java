@@ -62,28 +62,32 @@ public class CarResource extends ServerResource {
 	
 	@Post
     public Representation acceptItem(Representation entity) {  
-		Representation result = null;  
+		Representation result = null;
         // Parse the given representation and retrieve data
-        Form form = new Form(entity);  
-        String uid = form.getFirstValue("uid");
+        Form form = new Form(entity);
+        String param = form.getFirstValue("parameter");
+        String instance = form.getFirstValue("instance");
+        String dates = form.getFirstValue("dates");
+        
+        System.out.println(param + instance+dates);
+        
         String response = null;
-		try {
-			CarStockStub carStockStub = new CarStockStub();
-			UpdateCarAvailability updateCars = new UpdateCarAvailability();
-			updateCars.setSearch("//car[model='Palio']");
-			updateCars.setDates("01/07/2020:29/07/2020");
-			UpdateCarAvailabilityResponse updateCarsResponse = carStockStub.updateCarAvailability(updateCars);
-			response = updateCarsResponse.get_return();
-//				for(int i = 0; i < response.length; i++) {
-//					System.out.println(response[i]);
-//				}
-			
-		} catch(Exception e ) {
-			e.printStackTrace();
-		}
-		
-        result = new StringRepresentation("Sending uid="+ uid + " " + response, MediaType.TEXT_PLAIN); 
- 
+        if((param != null && !param.equals("")) && (instance != null && !instance.equals("")) && (dates != null && !dates.equals("")) ) {
+			try {
+				CarStockStub carStockStub = new CarStockStub();
+				UpdateCarAvailability updateCars = new UpdateCarAvailability();
+				updateCars.setSearch("//car["+ param + "='"+ instance +"']");
+				updateCars.setDates(dates);
+				UpdateCarAvailabilityResponse updateCarsResponse = carStockStub.updateCarAvailability(updateCars);
+				response = updateCarsResponse.get_return();
+				
+			} catch(Exception e ) {
+				e.printStackTrace();
+			}
+	        result = new StringRepresentation("Request for "+ param + "= "+ instance+":\n" + response, MediaType.TEXT_PLAIN);
+        } else {
+        	result = new StringRepresentation("Problem with parameters", MediaType.TEXT_PLAIN);
+        }
         return result;  
     } 
 }  
